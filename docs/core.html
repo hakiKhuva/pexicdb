@@ -1,0 +1,2209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>pexicdb.core API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>pexicdb.core</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import os
+import typing
+
+from .fields import BaseField, UUIDField, IntegerField
+from .helpers import decode, encode, create_container, get_all_containers
+from .lock import Lock
+
+
+class PexicdbCursor:
+    &#34;&#34;&#34;
+    PexicdbCursor is the main class that handles and provide methods to perform operations.
+
+    Arguments:
+        `name`: name of the container
+
+        `model`: list of fields
+
+        `datafile_fp`: file pointer to data file
+        
+        `container_fp`: file pointer to last created container file
+        
+        `max_size`: maximum size of the container file in MegaBytes
+    &#34;&#34;&#34;
+    def __init__(self, name:str, model:list[BaseField], datafile_fp, container_fp, max_size:int = 256) -&gt; None:
+        &#34;&#34;&#34;
+        
+        &#34;&#34;&#34;
+        if isinstance(name, str) is not True:
+            raise TypeError(
+                &#34;name of the container must be type %s&#34;%(str.__name__,)
+            )
+
+        if isinstance(model, list) is not True or len(model) &lt; 1:
+            raise TypeError(
+                &#34;model must be instance of %s and must contains atleast one member&#34;%(list.__name__,)
+            )
+        
+        for field in model:
+            if isinstance(field, BaseField) is not True:
+                raise TypeError(
+                    &#34;model field must be instance of %s&#34;%(BaseField.__name__,)
+                )
+        
+        if isinstance(model[0], (UUIDField, IntegerField)) is not True:
+            raise ValueError(
+                &#34;first field of any model must be instance of %s or %s, got %s&#34;%(UUIDField.__name__, IntegerField.__name__, type(model[0]).__name__)
+            )
+
+        if isinstance(max_size, int) is not True:
+            raise TypeError(
+                &#34;container&#39;s maximum size value must be type of %s&#34;%(int.__name__,)
+            )
+
+        if max_size &lt;= 0:
+            raise ValueError(
+                &#34;container&#39;s maximum size value must be greater than zero&#34;
+            )
+
+        self._name = name
+        &#34;&#34;&#34;name of the container&#34;&#34;&#34;
+
+        self._model = model.copy()
+        &#34;&#34;&#34;copy of the model created by the user&#34;&#34;&#34;
+
+        self._datafile_fp = datafile_fp
+        &#34;&#34;&#34;datafile opened file pointer&#34;&#34;&#34;
+
+        self._container_fp = container_fp
+        &#34;&#34;&#34;container file pointer(this must of the last container or freshly created)&#34;&#34;&#34;
+
+        self._lock = Lock()
+        &#34;&#34;&#34;Lock to maintain queue of the operation&#34;&#34;&#34;
+
+        self.max_size = max_size
+        &#34;&#34;&#34;
+        Maximum size of the container file in megabytes, this must be less than the runtime memory.
+
+        New container file will be created when a file exceed the maximum filesize.
+        &#34;&#34;&#34;
+
+        self.triggers = {
+            &#34;ON_INSERT&#34;: lambda model,cursor:None,
+            &#34;ON_UPDATE&#34;: lambda updated_models,cursor:None,
+            &#34;ON_REMOVE&#34;: lambda removed_models,cursor:None
+        }
+        &#34;&#34;&#34;
+        Triggers are used to run a specific function on specific operation, trigger name must be in uppercase
+
+        - `ON_INSERT` : associated function will run after insert operation
+        - `ON_UPDATE` : associated function will run after update operation
+        - `ON_REMOVE` : associated function will run after remove operation
+
+        ### **TRIGGER** `ON_INSERT`
+        Associated function must accept two arguments:
+
+         - `model` : model that is added
+         - `cursor` : instance of class
+        
+        ### **TRIGGER** `ON_UPDATE`
+        Associated function must accept two arguments:
+         
+         - `updated_models` : updated models in `list`
+         - `cursor` : instance of class
+         
+        ### **TRIGGER** `ON_REMOVE`
+        Associated function must accept two arguments:
+         
+         - `removed_models` : removed models in `list`
+         - `cursor` : instance of class
+
+         
+        ```
+        # ON_INSERT Trigger
+        import time
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values()))
+
+        def on_insert_log(model, cursor):
+            print(&#34;Model is inserted&#34;, time.time())
+
+        users.triggers[&#34;ON_INSERT&#34;] = on_insert_log
+
+        users.insert({
+            &#34;name&#34;: &#34;Harkishan Khuva&#34;,
+            &#34;age&#34;: 19
+        })
+
+        # Output:
+        # Model is inserted 1681646736.9039178
+        ```
+        &#34;&#34;&#34;
+    
+
+    def exec_trigger(self, name: str, kws:typing.Union[dict, None]=None) -&gt; None:
+        &#34;&#34;&#34;
+        Execute the trigger using its name, if the trigger not found or it is not callable at
+        that time value will not used as callable and no calls will be made.
+
+        You can also pass the keyword arguments to functions using `kws`.
+
+        `exec_trigger` is mainly for the internal use, but allows you to create your own and
+        allows you to execute it.
+
+        ```
+        import time
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values()))
+        
+        def on_insert(model, cursor):
+            users.exec_trigger(&#34;MY_TRIGGER&#34;, kws={
+                &#34;t&#34;: time.time()
+            })
+        
+        users.triggers[&#34;ON_INSERT&#34;] = on_insert
+        users.triggers[&#34;MY_TRIGGER&#34;] = lambda t: print(&#34;my trigger is called @&#34;,t)
+
+        users.insert({
+            &#34;name&#34;: &#34;Harkishan Khuva&#34;,
+            &#34;age&#34;: 19
+        })
+
+        # Output:
+        # my trigger is called @ 1681647079.6642978
+        ```
+
+        Arguments:
+            `name`: name of the trigger
+
+            `kws`: arguments to pass to the trigger function
+        &#34;&#34;&#34;
+        trigger_fun = self.triggers.get(name.upper())   # getting trigger function from the class object using name
+        # if trigger value found and it is not None and it is callable
+        # then call the function with argument kws
+        if trigger_fun is not None and callable(trigger_fun) is True:
+            if kws is None:
+                kws = {}
+            return trigger_fun(**kws)
+
+
+    def insert(self, data: typing.Union[list[BaseField], dict[str, typing.Any]]) -&gt; typing.Union[UUIDField, IntegerField]:
+        &#34;&#34;&#34;
+        Insert the model, at the time of insert you can also pass the `dict` object that
+        contains the field name as the key in it and the corresponding value to it.
+
+        To insert more than one model use iteration.
+
+        ```
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values()))
+
+        users.insert({
+            &#34;name&#34;: &#34;Harkishan Khuva&#34;,
+            &#34;age&#34;: 19
+        })
+        # or it can be done as follows
+        model = user.copy()
+        model[&#34;name&#34;].data = &#34;Harkishan Khuva&#34;
+        model[&#34;age&#34;].data = 19
+        users.insert(list(model.values()))
+        ```
+
+        Arguments:
+            `data`: data to be inserted
+        
+        Returns:
+            First field of the model
+        &#34;&#34;&#34;
+        # checking for data is instance of list or dict
+        if isinstance(data, list) is True:
+            # is list it&#39;s ok, check the field type and copy it
+            for field in data:
+                if isinstance(field, BaseField) is not True:
+                    raise TypeError(
+                        &#34;model field to be inserted must be instance of %s&#34;%(BaseField.__name__,)
+                    )
+            model = data.copy()
+
+        elif isinstance(data, dict) is True:
+            # is dict
+            # now add values to model fields using the keys.
+            # keys and name of the fields are matched and value is set.
+            model = self._model.copy()
+            for k,v in data.items(): # type:ignore
+                for field in model:
+                    if field.name == k:
+                        field.data = v
+        else:
+            # its error time.
+            raise TypeError(
+                &#34;Insert value argument must be instance of %s or %s, got %s&#34;%(list.__name__, dict.__name__, type(data).__name__)
+            )
+    
+        # checking model
+        if len(model) != len(self._model):
+            raise ValueError(
+                &#34;model length is not equal to the class model length&#34;
+            )
+        
+        # comparing the model and fields&#39; types
+        for index, field in enumerate(model):
+            if isinstance(field, type(self._model[index])) is not True:
+                raise TypeError(
+                    &#34;model to insert in the container contains invalid field &#39;%s&#39;, it must be &#39;%s&#39;&#34;%(type(field).__name__, type(self._model[index]).__name__)
+                )
+
+        with self._lock:
+            # iterating fields of the model
+            for field in model:
+                # assigning default value if exists
+                field.auto_assign() # type: ignore
+                # validating the field(e.g. checking data type and etc)
+                field.validate() # type: ignore
+            
+            # going at the end of the file
+            self._container_fp.seek(0,2)
+            # writing the model in base64 format using encode function.
+            self._container_fp.write(encode(model))
+            
+            # truncate the file
+            self._container_fp.truncate()
+
+            # checking the size of the current container
+            if (os.stat(self._container_fp.name).st_size/1024/1024) &gt;= self.max_size:
+                # if container is greater than or equal to the maximum size set
+                # then close the container file pointer
+                self._container_fp.close()
+                # create new container and set to the class member
+                self._container_fp = open(create_container(self._name), self._container_fp.mode)
+            
+            # calling trigger function if exists
+            self.exec_trigger(&#34;ON_INSERT&#34;, {
+                &#34;model&#34;: model,
+                &#34;cursor&#34;: self
+            })            
+
+            # return the first field of the model
+            return model[0] # type: ignore
+
+
+    def get(self, filter_fields:typing.Union[list, None] = None, limit:int = -1, return_as_dict:bool = False):
+        &#34;&#34;&#34;
+        Select or get the models stored in the container.
+
+        Filter fields are nothing but the list of lambda functions or it can be `None` to
+        get all models from the container.
+
+        You can also get the values as `dict` object, by setting `return_as_dict` value to `True`
+
+        ```
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values()))
+
+        # get all stored models
+        for c_user in users.get():
+            print(c_user)
+
+        # get models has age more than 20
+        for c_user in users.get([user[&#34;age&#34;].greater_than(20)]):
+            print(c_user)
+
+        # get only 2 models and in dictionary object
+        for c_user in users.get(limit=2, return_as_dict=True):
+            print(c_user)
+        ```
+
+        Arguments:
+            `filter_fields`: list of lambda functions to filter or None to get all
+
+            `limit`: number of models to be returned, `-1` for no limit
+
+            `return_as_dict`: returns in dict object when set to `True`
+        &#34;&#34;&#34;
+        returned_models = 0     # number of returned models
+        containers = get_all_containers(self._name)     # all containers name
+
+        # iterating containers
+        for container in containers:
+            # open the container is bytes read mode
+            container_fp = open(container, &#34;rb&#34;)    # container file pointer
+
+            # run the loop
+            # when the line data is nothing then break
+            while True:
+                line = container_fp.readline()  # read line from the container
+                if not line:
+                    # if line is empty or not then break the loop
+                    break
+                
+                # converting the base64 to model
+                model = decode(line)
+                
+                # total booleans returned by the lambda functions
+                booleans = []
+                
+                if filter_fields is None:
+                    # if filter_fields value is None
+                    # then to evaluate then to return the model
+                    # append the True to booleans list
+                    booleans.append(True)
+                else:
+                    # iterating lambda functions
+                    for lambda_fun in filter_fields:
+                        # iterating model field
+                        for field in model:
+                            booleans.append(lambda_fun(field))  # comparing and adding return value to the booleans
+
+                # checking for booleans
+                # if first booleans list value is True
+                # then all function will be used to get if all values in the list are True or not
+                if booleans[0] is True and all(booleans) is True:
+                    returned_models += 1    # incrementing the returned model
+
+                    if return_as_dict is True:
+                        # if the return as dict object is True
+                        kv = {} # empty dictionary object
+                        # itertating fields
+                        for field in model:
+                            # settings key value as the field name and the value is
+                            # the field
+                            kv[field.name] = field
+                        yield kv
+                    else:
+                        yield model
+
+                # checking the limit if set
+                if limit &gt; 0 and returned_models &gt;= limit:
+                    # if returned models are equal or more than it
+                    # then break
+                    break
+            
+            # checking the limit if set
+            if limit &gt; 0 and returned_models &gt;= limit:
+                # if returned models are equal or more than it
+                # then break
+                break
+
+
+    def update(self, filter_fields:typing.Union[list, None], data_to_update:dict) -&gt; list:
+        &#34;&#34;&#34;
+        Update the field data of stored model in the container using the `filter_fields`
+
+        You need pass the dictionary(`dict`) object to that contains data to replace with
+        using field name as the key.
+
+        ```
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values()))
+
+        # update the models where name is `Harkishan Khuva` and update it to the `Haki`
+        users.update(
+            [
+                user[&#34;name&#34;] == &#34;Harkishan Khuva&#34;
+            ],
+            {
+                &#34;name&#34;: &#34;Haki&#34;
+            }
+        )
+        ```
+
+        Arguments:
+            `filter_fields`: lambda functions or None to filter out models
+            `data_to_update`: data to replace in the model
+        
+        Returns:
+            returns the list of first field of model
+        &#34;&#34;&#34;
+        updated_keys = []   # updated models&#39; key will be stored in this object
+        containers = get_all_containers(self._name)     # getting all containers
+
+        # iterating containers
+        for container in containers:
+            models_to_update = {}   # models to be updated from container will be stored in this object
+            container_fp = open(container, &#34;rb+&#34;)   # container file&#39;s file pointer
+
+            index = 0   # using index and at last models are replaced with new models using index in the container
+            while True:
+                line = container_fp.readline()
+                if not line:
+                    break
+                # getting model from the line
+                model = decode(line)
+
+                booleans = []   # booleans will be stored from lambda functions
+                if filter_fields is None:
+                    # None mean do all
+                    # append the True value will make it to do
+                    booleans.append(True)
+                else:
+                    # iterating lambda function and appending it to booleans
+                    for lambda_fun in filter_fields:
+                        for field in model:
+                            booleans.append(lambda_fun(field))
+
+                # if booleans&#39; elements are True or only True value present in the booleans
+                if booleans[0] is True and all(booleans) is True:
+                    # updating model
+                    # using key value of data_to_update argument
+                    for k,v in data_to_update.items():
+                        for field in model:
+                            if field.name == k: # checking field name and update the value
+                                field.data = v
+                    models_to_update[index] = model # adding model to models_to_update with index number(line_number-1)
+                index += 1  # incrment index
+
+            # if models are available in models_to_update object
+            if len(models_to_update.keys()) &gt; 0:
+                container_fp.seek(0) # file pointer to starting position
+                lines = container_fp.readlines()    # reading all lines of container
+                
+                # iterating updated models
+                for index, model in models_to_update.items():
+                    lines[index] = encode(model)    # updating model using index of it&#39;s in container
+                    updated_keys.append(model[0].data)  # append the first field value to the updated_keys
+                
+                container_fp.seek(0)    # again file pointer at start position
+                container_fp.writelines(lines)  # write modified lines
+                container_fp.truncate() # truncate the file
+
+            # close the container file pointer
+            container_fp.close()
+
+            # execute the trigger
+            self.exec_trigger(&#34;ON_UPDATE&#34;, {
+                &#34;updated_models&#34;: list(models_to_update.values()),
+                &#34;cursor&#34;: self
+            })
+
+        return updated_keys
+
+
+    def remove(self, filter_fields:typing.Union[list, None], limit:int = -1) -&gt; list:
+        &#34;&#34;&#34;
+        Remove the model from the container using lambda functions or None to remove all.
+
+        You can also pass the number of models to be removed, using `limit` argument.
+
+        ```
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values()))
+
+        users.remove(None) # remove all models
+
+        # remove specific model where the name value is `Harkishan Khuva`
+        # and limit is set to 1
+        users.remove([
+            user[&#34;name&#34;] == &#34;Harkishan Khuva&#34;
+        ], limit=1)
+        ```
+
+        Arguments:
+            `filter_fields`: lambda functions or None for all
+
+            `limit`: limit of number of records to remove
+        
+        Returns:
+            List containing removed models
+        &#34;&#34;&#34;
+        removed_models = [] # models that are removed
+
+        with self._lock:
+            containers = get_all_containers(self._name) # all containers
+
+            # iterating containers
+            for container in containers:
+                container_fp = open(container, &#34;rb+&#34;)   # container file&#39;s file pointer
+                container_fp.seek(0)
+
+                to_remove_models_index = [] # index of model to be removed from the container
+                index = 0   # index for getting index of the line in the container
+                while True:
+                    line = container_fp.readline()
+                    if not line:
+                        break
+                    model = decode(line)    # original model
+
+                    booleans = []
+                    if filter_fields is None:
+                        # None mean do all
+                        # append the True value will make it to do
+                        booleans.append(True)
+                    else:
+                        # iterating lambda functions
+                        for lambda_fun in filter_fields:
+                            for field in model:
+                                booleans.append(lambda_fun(field))
+
+                    # if booleans have only True values
+                    if booleans[0] is True and all(booleans) is True:
+                        to_remove_models_index.append(index)    # adding index to remove
+                        removed_models.append(model)    # adding model that will be removed
+
+                        # if the limit is set and removed models length is greater than or equal to
+                        # then break the loop
+                        if limit &gt; 0 and len(removed_models) &gt;= limit:
+                            break
+                    index += 1  # increment the index value
+                
+                if len(to_remove_models_index) &gt; 0: # if the length of to_remove_models_index object is more than 0
+                    container_fp.seek(0)    # change the position to the starting
+                    lines = container_fp.readlines()    # reading all lines
+
+                    # iterating index in the to_remove_models_index in reverse to
+                    # avoid the index error
+                    for index in reversed(to_remove_models_index):
+                        lines.pop(index)    # removing the line(encoded model) using index
+                    
+                    container_fp.seek(0)    # set the position to the start
+                    container_fp.writelines(lines)  # writing modified lines
+                    container_fp.truncate() # truncate the file
+
+                # closing the container
+                container_fp.close()
+                
+                # execute trigger
+                self.exec_trigger(&#34;ON_REMOVE&#34;, {
+                    &#34;removed_models&#34;: removed_models,
+                    &#34;cursor&#34;: self
+                })
+                
+                # if the limit is set and removed models length is greater than or equal to
+                # then break the loop
+                if limit &gt; 0 and len(removed_models) &gt;= limit:
+                    break
+
+        return removed_models
+    
+
+    def count(self, generator:typing.Generator) -&gt; int:
+        &#34;&#34;&#34;
+        This will iterate the generator and stops when `StopIteration` exception is raised.
+        It will count the number of iterations and returns it.
+
+        ```
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        # create user model
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values())) # connect to the container
+        print(users.count(users.get())) # prints the number of models
+        ```
+
+        Arguments:
+            `generator`: any iterable object
+        
+        Returns:
+            Count of iterations
+        &#34;&#34;&#34;
+        if isinstance(generator, typing.Generator) is not True:
+            raise TypeError(
+                &#34;generator argument must be instance of %s, got %s&#34;%(typing.Generator.__name__, type(generator).__name__)
+            )
+
+        k = 0   # assigning count to value zero
+        
+        while True:
+            try:
+                next(generator) # next to item
+            except StopIteration:
+                break # break when StopIteration raises
+            else:
+                k += 1  # increment k by 1
+
+        return k
+
+
+    def __repr__(self) -&gt; str:
+        return f&#34;&lt;PexicdbCursor name=&#39;{self._name}&#39; max_size=&#39;{self.max_size}MBs&#39;&gt;&#34;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="pexicdb.core.PexicdbCursor"><code class="flex name class">
+<span>class <span class="ident">PexicdbCursor</span></span>
+<span>(</span><span>name: str, model: list[<a title="pexicdb.fields.BaseField" href="fields.html#pexicdb.fields.BaseField">BaseField</a>], datafile_fp, container_fp, max_size: int = 256)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>PexicdbCursor is the main class that handles and provide methods to perform operations.</p>
+<h2 id="arguments">Arguments</h2>
+<p><code>name</code>: name of the container</p>
+<p><code>model</code>: list of fields</p>
+<p><code>datafile_fp</code>: file pointer to data file</p>
+<p><code>container_fp</code>: file pointer to last created container file</p>
+<p><code>max_size</code>: maximum size of the container file in MegaBytes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PexicdbCursor:
+    &#34;&#34;&#34;
+    PexicdbCursor is the main class that handles and provide methods to perform operations.
+
+    Arguments:
+        `name`: name of the container
+
+        `model`: list of fields
+
+        `datafile_fp`: file pointer to data file
+        
+        `container_fp`: file pointer to last created container file
+        
+        `max_size`: maximum size of the container file in MegaBytes
+    &#34;&#34;&#34;
+    def __init__(self, name:str, model:list[BaseField], datafile_fp, container_fp, max_size:int = 256) -&gt; None:
+        &#34;&#34;&#34;
+        
+        &#34;&#34;&#34;
+        if isinstance(name, str) is not True:
+            raise TypeError(
+                &#34;name of the container must be type %s&#34;%(str.__name__,)
+            )
+
+        if isinstance(model, list) is not True or len(model) &lt; 1:
+            raise TypeError(
+                &#34;model must be instance of %s and must contains atleast one member&#34;%(list.__name__,)
+            )
+        
+        for field in model:
+            if isinstance(field, BaseField) is not True:
+                raise TypeError(
+                    &#34;model field must be instance of %s&#34;%(BaseField.__name__,)
+                )
+        
+        if isinstance(model[0], (UUIDField, IntegerField)) is not True:
+            raise ValueError(
+                &#34;first field of any model must be instance of %s or %s, got %s&#34;%(UUIDField.__name__, IntegerField.__name__, type(model[0]).__name__)
+            )
+
+        if isinstance(max_size, int) is not True:
+            raise TypeError(
+                &#34;container&#39;s maximum size value must be type of %s&#34;%(int.__name__,)
+            )
+
+        if max_size &lt;= 0:
+            raise ValueError(
+                &#34;container&#39;s maximum size value must be greater than zero&#34;
+            )
+
+        self._name = name
+        &#34;&#34;&#34;name of the container&#34;&#34;&#34;
+
+        self._model = model.copy()
+        &#34;&#34;&#34;copy of the model created by the user&#34;&#34;&#34;
+
+        self._datafile_fp = datafile_fp
+        &#34;&#34;&#34;datafile opened file pointer&#34;&#34;&#34;
+
+        self._container_fp = container_fp
+        &#34;&#34;&#34;container file pointer(this must of the last container or freshly created)&#34;&#34;&#34;
+
+        self._lock = Lock()
+        &#34;&#34;&#34;Lock to maintain queue of the operation&#34;&#34;&#34;
+
+        self.max_size = max_size
+        &#34;&#34;&#34;
+        Maximum size of the container file in megabytes, this must be less than the runtime memory.
+
+        New container file will be created when a file exceed the maximum filesize.
+        &#34;&#34;&#34;
+
+        self.triggers = {
+            &#34;ON_INSERT&#34;: lambda model,cursor:None,
+            &#34;ON_UPDATE&#34;: lambda updated_models,cursor:None,
+            &#34;ON_REMOVE&#34;: lambda removed_models,cursor:None
+        }
+        &#34;&#34;&#34;
+        Triggers are used to run a specific function on specific operation, trigger name must be in uppercase
+
+        - `ON_INSERT` : associated function will run after insert operation
+        - `ON_UPDATE` : associated function will run after update operation
+        - `ON_REMOVE` : associated function will run after remove operation
+
+        ### **TRIGGER** `ON_INSERT`
+        Associated function must accept two arguments:
+
+         - `model` : model that is added
+         - `cursor` : instance of class
+        
+        ### **TRIGGER** `ON_UPDATE`
+        Associated function must accept two arguments:
+         
+         - `updated_models` : updated models in `list`
+         - `cursor` : instance of class
+         
+        ### **TRIGGER** `ON_REMOVE`
+        Associated function must accept two arguments:
+         
+         - `removed_models` : removed models in `list`
+         - `cursor` : instance of class
+
+         
+        ```
+        # ON_INSERT Trigger
+        import time
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values()))
+
+        def on_insert_log(model, cursor):
+            print(&#34;Model is inserted&#34;, time.time())
+
+        users.triggers[&#34;ON_INSERT&#34;] = on_insert_log
+
+        users.insert({
+            &#34;name&#34;: &#34;Harkishan Khuva&#34;,
+            &#34;age&#34;: 19
+        })
+
+        # Output:
+        # Model is inserted 1681646736.9039178
+        ```
+        &#34;&#34;&#34;
+    
+
+    def exec_trigger(self, name: str, kws:typing.Union[dict, None]=None) -&gt; None:
+        &#34;&#34;&#34;
+        Execute the trigger using its name, if the trigger not found or it is not callable at
+        that time value will not used as callable and no calls will be made.
+
+        You can also pass the keyword arguments to functions using `kws`.
+
+        `exec_trigger` is mainly for the internal use, but allows you to create your own and
+        allows you to execute it.
+
+        ```
+        import time
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values()))
+        
+        def on_insert(model, cursor):
+            users.exec_trigger(&#34;MY_TRIGGER&#34;, kws={
+                &#34;t&#34;: time.time()
+            })
+        
+        users.triggers[&#34;ON_INSERT&#34;] = on_insert
+        users.triggers[&#34;MY_TRIGGER&#34;] = lambda t: print(&#34;my trigger is called @&#34;,t)
+
+        users.insert({
+            &#34;name&#34;: &#34;Harkishan Khuva&#34;,
+            &#34;age&#34;: 19
+        })
+
+        # Output:
+        # my trigger is called @ 1681647079.6642978
+        ```
+
+        Arguments:
+            `name`: name of the trigger
+
+            `kws`: arguments to pass to the trigger function
+        &#34;&#34;&#34;
+        trigger_fun = self.triggers.get(name.upper())   # getting trigger function from the class object using name
+        # if trigger value found and it is not None and it is callable
+        # then call the function with argument kws
+        if trigger_fun is not None and callable(trigger_fun) is True:
+            if kws is None:
+                kws = {}
+            return trigger_fun(**kws)
+
+
+    def insert(self, data: typing.Union[list[BaseField], dict[str, typing.Any]]) -&gt; typing.Union[UUIDField, IntegerField]:
+        &#34;&#34;&#34;
+        Insert the model, at the time of insert you can also pass the `dict` object that
+        contains the field name as the key in it and the corresponding value to it.
+
+        To insert more than one model use iteration.
+
+        ```
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values()))
+
+        users.insert({
+            &#34;name&#34;: &#34;Harkishan Khuva&#34;,
+            &#34;age&#34;: 19
+        })
+        # or it can be done as follows
+        model = user.copy()
+        model[&#34;name&#34;].data = &#34;Harkishan Khuva&#34;
+        model[&#34;age&#34;].data = 19
+        users.insert(list(model.values()))
+        ```
+
+        Arguments:
+            `data`: data to be inserted
+        
+        Returns:
+            First field of the model
+        &#34;&#34;&#34;
+        # checking for data is instance of list or dict
+        if isinstance(data, list) is True:
+            # is list it&#39;s ok, check the field type and copy it
+            for field in data:
+                if isinstance(field, BaseField) is not True:
+                    raise TypeError(
+                        &#34;model field to be inserted must be instance of %s&#34;%(BaseField.__name__,)
+                    )
+            model = data.copy()
+
+        elif isinstance(data, dict) is True:
+            # is dict
+            # now add values to model fields using the keys.
+            # keys and name of the fields are matched and value is set.
+            model = self._model.copy()
+            for k,v in data.items(): # type:ignore
+                for field in model:
+                    if field.name == k:
+                        field.data = v
+        else:
+            # its error time.
+            raise TypeError(
+                &#34;Insert value argument must be instance of %s or %s, got %s&#34;%(list.__name__, dict.__name__, type(data).__name__)
+            )
+    
+        # checking model
+        if len(model) != len(self._model):
+            raise ValueError(
+                &#34;model length is not equal to the class model length&#34;
+            )
+        
+        # comparing the model and fields&#39; types
+        for index, field in enumerate(model):
+            if isinstance(field, type(self._model[index])) is not True:
+                raise TypeError(
+                    &#34;model to insert in the container contains invalid field &#39;%s&#39;, it must be &#39;%s&#39;&#34;%(type(field).__name__, type(self._model[index]).__name__)
+                )
+
+        with self._lock:
+            # iterating fields of the model
+            for field in model:
+                # assigning default value if exists
+                field.auto_assign() # type: ignore
+                # validating the field(e.g. checking data type and etc)
+                field.validate() # type: ignore
+            
+            # going at the end of the file
+            self._container_fp.seek(0,2)
+            # writing the model in base64 format using encode function.
+            self._container_fp.write(encode(model))
+            
+            # truncate the file
+            self._container_fp.truncate()
+
+            # checking the size of the current container
+            if (os.stat(self._container_fp.name).st_size/1024/1024) &gt;= self.max_size:
+                # if container is greater than or equal to the maximum size set
+                # then close the container file pointer
+                self._container_fp.close()
+                # create new container and set to the class member
+                self._container_fp = open(create_container(self._name), self._container_fp.mode)
+            
+            # calling trigger function if exists
+            self.exec_trigger(&#34;ON_INSERT&#34;, {
+                &#34;model&#34;: model,
+                &#34;cursor&#34;: self
+            })            
+
+            # return the first field of the model
+            return model[0] # type: ignore
+
+
+    def get(self, filter_fields:typing.Union[list, None] = None, limit:int = -1, return_as_dict:bool = False):
+        &#34;&#34;&#34;
+        Select or get the models stored in the container.
+
+        Filter fields are nothing but the list of lambda functions or it can be `None` to
+        get all models from the container.
+
+        You can also get the values as `dict` object, by setting `return_as_dict` value to `True`
+
+        ```
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values()))
+
+        # get all stored models
+        for c_user in users.get():
+            print(c_user)
+
+        # get models has age more than 20
+        for c_user in users.get([user[&#34;age&#34;].greater_than(20)]):
+            print(c_user)
+
+        # get only 2 models and in dictionary object
+        for c_user in users.get(limit=2, return_as_dict=True):
+            print(c_user)
+        ```
+
+        Arguments:
+            `filter_fields`: list of lambda functions to filter or None to get all
+
+            `limit`: number of models to be returned, `-1` for no limit
+
+            `return_as_dict`: returns in dict object when set to `True`
+        &#34;&#34;&#34;
+        returned_models = 0     # number of returned models
+        containers = get_all_containers(self._name)     # all containers name
+
+        # iterating containers
+        for container in containers:
+            # open the container is bytes read mode
+            container_fp = open(container, &#34;rb&#34;)    # container file pointer
+
+            # run the loop
+            # when the line data is nothing then break
+            while True:
+                line = container_fp.readline()  # read line from the container
+                if not line:
+                    # if line is empty or not then break the loop
+                    break
+                
+                # converting the base64 to model
+                model = decode(line)
+                
+                # total booleans returned by the lambda functions
+                booleans = []
+                
+                if filter_fields is None:
+                    # if filter_fields value is None
+                    # then to evaluate then to return the model
+                    # append the True to booleans list
+                    booleans.append(True)
+                else:
+                    # iterating lambda functions
+                    for lambda_fun in filter_fields:
+                        # iterating model field
+                        for field in model:
+                            booleans.append(lambda_fun(field))  # comparing and adding return value to the booleans
+
+                # checking for booleans
+                # if first booleans list value is True
+                # then all function will be used to get if all values in the list are True or not
+                if booleans[0] is True and all(booleans) is True:
+                    returned_models += 1    # incrementing the returned model
+
+                    if return_as_dict is True:
+                        # if the return as dict object is True
+                        kv = {} # empty dictionary object
+                        # itertating fields
+                        for field in model:
+                            # settings key value as the field name and the value is
+                            # the field
+                            kv[field.name] = field
+                        yield kv
+                    else:
+                        yield model
+
+                # checking the limit if set
+                if limit &gt; 0 and returned_models &gt;= limit:
+                    # if returned models are equal or more than it
+                    # then break
+                    break
+            
+            # checking the limit if set
+            if limit &gt; 0 and returned_models &gt;= limit:
+                # if returned models are equal or more than it
+                # then break
+                break
+
+
+    def update(self, filter_fields:typing.Union[list, None], data_to_update:dict) -&gt; list:
+        &#34;&#34;&#34;
+        Update the field data of stored model in the container using the `filter_fields`
+
+        You need pass the dictionary(`dict`) object to that contains data to replace with
+        using field name as the key.
+
+        ```
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values()))
+
+        # update the models where name is `Harkishan Khuva` and update it to the `Haki`
+        users.update(
+            [
+                user[&#34;name&#34;] == &#34;Harkishan Khuva&#34;
+            ],
+            {
+                &#34;name&#34;: &#34;Haki&#34;
+            }
+        )
+        ```
+
+        Arguments:
+            `filter_fields`: lambda functions or None to filter out models
+            `data_to_update`: data to replace in the model
+        
+        Returns:
+            returns the list of first field of model
+        &#34;&#34;&#34;
+        updated_keys = []   # updated models&#39; key will be stored in this object
+        containers = get_all_containers(self._name)     # getting all containers
+
+        # iterating containers
+        for container in containers:
+            models_to_update = {}   # models to be updated from container will be stored in this object
+            container_fp = open(container, &#34;rb+&#34;)   # container file&#39;s file pointer
+
+            index = 0   # using index and at last models are replaced with new models using index in the container
+            while True:
+                line = container_fp.readline()
+                if not line:
+                    break
+                # getting model from the line
+                model = decode(line)
+
+                booleans = []   # booleans will be stored from lambda functions
+                if filter_fields is None:
+                    # None mean do all
+                    # append the True value will make it to do
+                    booleans.append(True)
+                else:
+                    # iterating lambda function and appending it to booleans
+                    for lambda_fun in filter_fields:
+                        for field in model:
+                            booleans.append(lambda_fun(field))
+
+                # if booleans&#39; elements are True or only True value present in the booleans
+                if booleans[0] is True and all(booleans) is True:
+                    # updating model
+                    # using key value of data_to_update argument
+                    for k,v in data_to_update.items():
+                        for field in model:
+                            if field.name == k: # checking field name and update the value
+                                field.data = v
+                    models_to_update[index] = model # adding model to models_to_update with index number(line_number-1)
+                index += 1  # incrment index
+
+            # if models are available in models_to_update object
+            if len(models_to_update.keys()) &gt; 0:
+                container_fp.seek(0) # file pointer to starting position
+                lines = container_fp.readlines()    # reading all lines of container
+                
+                # iterating updated models
+                for index, model in models_to_update.items():
+                    lines[index] = encode(model)    # updating model using index of it&#39;s in container
+                    updated_keys.append(model[0].data)  # append the first field value to the updated_keys
+                
+                container_fp.seek(0)    # again file pointer at start position
+                container_fp.writelines(lines)  # write modified lines
+                container_fp.truncate() # truncate the file
+
+            # close the container file pointer
+            container_fp.close()
+
+            # execute the trigger
+            self.exec_trigger(&#34;ON_UPDATE&#34;, {
+                &#34;updated_models&#34;: list(models_to_update.values()),
+                &#34;cursor&#34;: self
+            })
+
+        return updated_keys
+
+
+    def remove(self, filter_fields:typing.Union[list, None], limit:int = -1) -&gt; list:
+        &#34;&#34;&#34;
+        Remove the model from the container using lambda functions or None to remove all.
+
+        You can also pass the number of models to be removed, using `limit` argument.
+
+        ```
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values()))
+
+        users.remove(None) # remove all models
+
+        # remove specific model where the name value is `Harkishan Khuva`
+        # and limit is set to 1
+        users.remove([
+            user[&#34;name&#34;] == &#34;Harkishan Khuva&#34;
+        ], limit=1)
+        ```
+
+        Arguments:
+            `filter_fields`: lambda functions or None for all
+
+            `limit`: limit of number of records to remove
+        
+        Returns:
+            List containing removed models
+        &#34;&#34;&#34;
+        removed_models = [] # models that are removed
+
+        with self._lock:
+            containers = get_all_containers(self._name) # all containers
+
+            # iterating containers
+            for container in containers:
+                container_fp = open(container, &#34;rb+&#34;)   # container file&#39;s file pointer
+                container_fp.seek(0)
+
+                to_remove_models_index = [] # index of model to be removed from the container
+                index = 0   # index for getting index of the line in the container
+                while True:
+                    line = container_fp.readline()
+                    if not line:
+                        break
+                    model = decode(line)    # original model
+
+                    booleans = []
+                    if filter_fields is None:
+                        # None mean do all
+                        # append the True value will make it to do
+                        booleans.append(True)
+                    else:
+                        # iterating lambda functions
+                        for lambda_fun in filter_fields:
+                            for field in model:
+                                booleans.append(lambda_fun(field))
+
+                    # if booleans have only True values
+                    if booleans[0] is True and all(booleans) is True:
+                        to_remove_models_index.append(index)    # adding index to remove
+                        removed_models.append(model)    # adding model that will be removed
+
+                        # if the limit is set and removed models length is greater than or equal to
+                        # then break the loop
+                        if limit &gt; 0 and len(removed_models) &gt;= limit:
+                            break
+                    index += 1  # increment the index value
+                
+                if len(to_remove_models_index) &gt; 0: # if the length of to_remove_models_index object is more than 0
+                    container_fp.seek(0)    # change the position to the starting
+                    lines = container_fp.readlines()    # reading all lines
+
+                    # iterating index in the to_remove_models_index in reverse to
+                    # avoid the index error
+                    for index in reversed(to_remove_models_index):
+                        lines.pop(index)    # removing the line(encoded model) using index
+                    
+                    container_fp.seek(0)    # set the position to the start
+                    container_fp.writelines(lines)  # writing modified lines
+                    container_fp.truncate() # truncate the file
+
+                # closing the container
+                container_fp.close()
+                
+                # execute trigger
+                self.exec_trigger(&#34;ON_REMOVE&#34;, {
+                    &#34;removed_models&#34;: removed_models,
+                    &#34;cursor&#34;: self
+                })
+                
+                # if the limit is set and removed models length is greater than or equal to
+                # then break the loop
+                if limit &gt; 0 and len(removed_models) &gt;= limit:
+                    break
+
+        return removed_models
+    
+
+    def count(self, generator:typing.Generator) -&gt; int:
+        &#34;&#34;&#34;
+        This will iterate the generator and stops when `StopIteration` exception is raised.
+        It will count the number of iterations and returns it.
+
+        ```
+        from pexicdb import connect
+        from pexicdb.fields import UUIDField, StringField, IntegerField
+
+        # create user model
+        user = {
+            &#34;id&#34;: UUIDField(&#34;id&#34;),
+            &#34;name&#34;: StringField(&#34;name&#34;),
+            &#34;age&#34;: IntegerField(&#34;age&#34;)
+        }
+
+        users = connect(&#34;users&#34;, list(user.values())) # connect to the container
+        print(users.count(users.get())) # prints the number of models
+        ```
+
+        Arguments:
+            `generator`: any iterable object
+        
+        Returns:
+            Count of iterations
+        &#34;&#34;&#34;
+        if isinstance(generator, typing.Generator) is not True:
+            raise TypeError(
+                &#34;generator argument must be instance of %s, got %s&#34;%(typing.Generator.__name__, type(generator).__name__)
+            )
+
+        k = 0   # assigning count to value zero
+        
+        while True:
+            try:
+                next(generator) # next to item
+            except StopIteration:
+                break # break when StopIteration raises
+            else:
+                k += 1  # increment k by 1
+
+        return k
+
+
+    def __repr__(self) -&gt; str:
+        return f&#34;&lt;PexicdbCursor name=&#39;{self._name}&#39; max_size=&#39;{self.max_size}MBs&#39;&gt;&#34;</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="pexicdb.core.PexicdbCursor.max_size"><code class="name">var <span class="ident">max_size</span></code></dt>
+<dd>
+<div class="desc"><p>Maximum size of the container file in megabytes, this must be less than the runtime memory.</p>
+<p>New container file will be created when a file exceed the maximum filesize.</p></div>
+</dd>
+<dt id="pexicdb.core.PexicdbCursor.triggers"><code class="name">var <span class="ident">triggers</span></code></dt>
+<dd>
+<div class="desc"><p>Triggers are used to run a specific function on specific operation, trigger name must be in uppercase</p>
+<ul>
+<li><code>ON_INSERT</code> : associated function will run after insert operation</li>
+<li><code>ON_UPDATE</code> : associated function will run after update operation</li>
+<li><code>ON_REMOVE</code> : associated function will run after remove operation</li>
+</ul>
+<h3 id="trigger-on_insert"><strong>TRIGGER</strong> <code>ON_INSERT</code></h3>
+<p>Associated function must accept two arguments:</p>
+<ul>
+<li><code>model</code> : model that is added</li>
+<li><code>cursor</code> : instance of class</li>
+</ul>
+<h3 id="trigger-on_update"><strong>TRIGGER</strong> <code>ON_UPDATE</code></h3>
+<p>Associated function must accept two arguments:</p>
+<ul>
+<li><code>updated_models</code> : updated models in <code>list</code></li>
+<li><code>cursor</code> : instance of class</li>
+</ul>
+<h3 id="trigger-on_remove"><strong>TRIGGER</strong> <code>ON_REMOVE</code></h3>
+<p>Associated function must accept two arguments:</p>
+<ul>
+<li><code>removed_models</code> : removed models in <code>list</code></li>
+<li><code>cursor</code> : instance of class</li>
+</ul>
+<pre><code># ON_INSERT Trigger
+import time
+from pexicdb import connect
+from pexicdb.fields import UUIDField, StringField, IntegerField
+
+user = {
+    &quot;id&quot;: UUIDField(&quot;id&quot;),
+    &quot;name&quot;: StringField(&quot;name&quot;),
+    &quot;age&quot;: IntegerField(&quot;age&quot;)
+}
+
+users = connect(&quot;users&quot;, list(user.values()))
+
+def on_insert_log(model, cursor):
+    print(&quot;Model is inserted&quot;, time.time())
+
+users.triggers[&quot;ON_INSERT&quot;] = on_insert_log
+
+users.insert({
+    &quot;name&quot;: &quot;Harkishan Khuva&quot;,
+    &quot;age&quot;: 19
+})
+
+# Output:
+# Model is inserted 1681646736.9039178
+</code></pre></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="pexicdb.core.PexicdbCursor.count"><code class="name flex">
+<span>def <span class="ident">count</span></span>(<span>self, generator: Generator) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This will iterate the generator and stops when <code>StopIteration</code> exception is raised.
+It will count the number of iterations and returns it.</p>
+<pre><code>from pexicdb import connect
+from pexicdb.fields import UUIDField, StringField, IntegerField
+
+# create user model
+user = {
+    &quot;id&quot;: UUIDField(&quot;id&quot;),
+    &quot;name&quot;: StringField(&quot;name&quot;),
+    &quot;age&quot;: IntegerField(&quot;age&quot;)
+}
+
+users = connect(&quot;users&quot;, list(user.values())) # connect to the container
+print(users.count(users.get())) # prints the number of models
+</code></pre>
+<h2 id="arguments">Arguments</h2>
+<p><code>generator</code>: any iterable object</p>
+<h2 id="returns">Returns</h2>
+<p>Count of iterations</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def count(self, generator:typing.Generator) -&gt; int:
+    &#34;&#34;&#34;
+    This will iterate the generator and stops when `StopIteration` exception is raised.
+    It will count the number of iterations and returns it.
+
+    ```
+    from pexicdb import connect
+    from pexicdb.fields import UUIDField, StringField, IntegerField
+
+    # create user model
+    user = {
+        &#34;id&#34;: UUIDField(&#34;id&#34;),
+        &#34;name&#34;: StringField(&#34;name&#34;),
+        &#34;age&#34;: IntegerField(&#34;age&#34;)
+    }
+
+    users = connect(&#34;users&#34;, list(user.values())) # connect to the container
+    print(users.count(users.get())) # prints the number of models
+    ```
+
+    Arguments:
+        `generator`: any iterable object
+    
+    Returns:
+        Count of iterations
+    &#34;&#34;&#34;
+    if isinstance(generator, typing.Generator) is not True:
+        raise TypeError(
+            &#34;generator argument must be instance of %s, got %s&#34;%(typing.Generator.__name__, type(generator).__name__)
+        )
+
+    k = 0   # assigning count to value zero
+    
+    while True:
+        try:
+            next(generator) # next to item
+        except StopIteration:
+            break # break when StopIteration raises
+        else:
+            k += 1  # increment k by 1
+
+    return k</code></pre>
+</details>
+</dd>
+<dt id="pexicdb.core.PexicdbCursor.exec_trigger"><code class="name flex">
+<span>def <span class="ident">exec_trigger</span></span>(<span>self, name: str, kws: Optional[dict] = None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Execute the trigger using its name, if the trigger not found or it is not callable at
+that time value will not used as callable and no calls will be made.</p>
+<p>You can also pass the keyword arguments to functions using <code>kws</code>.</p>
+<p><code>exec_trigger</code> is mainly for the internal use, but allows you to create your own and
+allows you to execute it.</p>
+<pre><code>import time
+from pexicdb import connect
+from pexicdb.fields import UUIDField, StringField, IntegerField
+
+user = {
+    &quot;id&quot;: UUIDField(&quot;id&quot;),
+    &quot;name&quot;: StringField(&quot;name&quot;),
+    &quot;age&quot;: IntegerField(&quot;age&quot;)
+}
+
+users = connect(&quot;users&quot;, list(user.values()))
+
+def on_insert(model, cursor):
+    users.exec_trigger(&quot;MY_TRIGGER&quot;, kws={
+        &quot;t&quot;: time.time()
+    })
+
+users.triggers[&quot;ON_INSERT&quot;] = on_insert
+users.triggers[&quot;MY_TRIGGER&quot;] = lambda t: print(&quot;my trigger is called @&quot;,t)
+
+users.insert({
+    &quot;name&quot;: &quot;Harkishan Khuva&quot;,
+    &quot;age&quot;: 19
+})
+
+# Output:
+# my trigger is called @ 1681647079.6642978
+</code></pre>
+<h2 id="arguments">Arguments</h2>
+<p><code>name</code>: name of the trigger</p>
+<p><code>kws</code>: arguments to pass to the trigger function</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def exec_trigger(self, name: str, kws:typing.Union[dict, None]=None) -&gt; None:
+    &#34;&#34;&#34;
+    Execute the trigger using its name, if the trigger not found or it is not callable at
+    that time value will not used as callable and no calls will be made.
+
+    You can also pass the keyword arguments to functions using `kws`.
+
+    `exec_trigger` is mainly for the internal use, but allows you to create your own and
+    allows you to execute it.
+
+    ```
+    import time
+    from pexicdb import connect
+    from pexicdb.fields import UUIDField, StringField, IntegerField
+
+    user = {
+        &#34;id&#34;: UUIDField(&#34;id&#34;),
+        &#34;name&#34;: StringField(&#34;name&#34;),
+        &#34;age&#34;: IntegerField(&#34;age&#34;)
+    }
+
+    users = connect(&#34;users&#34;, list(user.values()))
+    
+    def on_insert(model, cursor):
+        users.exec_trigger(&#34;MY_TRIGGER&#34;, kws={
+            &#34;t&#34;: time.time()
+        })
+    
+    users.triggers[&#34;ON_INSERT&#34;] = on_insert
+    users.triggers[&#34;MY_TRIGGER&#34;] = lambda t: print(&#34;my trigger is called @&#34;,t)
+
+    users.insert({
+        &#34;name&#34;: &#34;Harkishan Khuva&#34;,
+        &#34;age&#34;: 19
+    })
+
+    # Output:
+    # my trigger is called @ 1681647079.6642978
+    ```
+
+    Arguments:
+        `name`: name of the trigger
+
+        `kws`: arguments to pass to the trigger function
+    &#34;&#34;&#34;
+    trigger_fun = self.triggers.get(name.upper())   # getting trigger function from the class object using name
+    # if trigger value found and it is not None and it is callable
+    # then call the function with argument kws
+    if trigger_fun is not None and callable(trigger_fun) is True:
+        if kws is None:
+            kws = {}
+        return trigger_fun(**kws)</code></pre>
+</details>
+</dd>
+<dt id="pexicdb.core.PexicdbCursor.get"><code class="name flex">
+<span>def <span class="ident">get</span></span>(<span>self, filter_fields: Optional[list] = None, limit: int = -1, return_as_dict: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Select or get the models stored in the container.</p>
+<p>Filter fields are nothing but the list of lambda functions or it can be <code>None</code> to
+get all models from the container.</p>
+<p>You can also get the values as <code>dict</code> object, by setting <code>return_as_dict</code> value to <code>True</code></p>
+<pre><code>from pexicdb import connect
+from pexicdb.fields import UUIDField, StringField, IntegerField
+
+user = {
+    &quot;id&quot;: UUIDField(&quot;id&quot;),
+    &quot;name&quot;: StringField(&quot;name&quot;),
+    &quot;age&quot;: IntegerField(&quot;age&quot;)
+}
+
+users = connect(&quot;users&quot;, list(user.values()))
+
+# get all stored models
+for c_user in users.get():
+    print(c_user)
+
+# get models has age more than 20
+for c_user in users.get([user[&quot;age&quot;].greater_than(20)]):
+    print(c_user)
+
+# get only 2 models and in dictionary object
+for c_user in users.get(limit=2, return_as_dict=True):
+    print(c_user)
+</code></pre>
+<h2 id="arguments">Arguments</h2>
+<p><code>filter_fields</code>: list of lambda functions to filter or None to get all</p>
+<p><code>limit</code>: number of models to be returned, <code>-1</code> for no limit</p>
+<p><code>return_as_dict</code>: returns in dict object when set to <code>True</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get(self, filter_fields:typing.Union[list, None] = None, limit:int = -1, return_as_dict:bool = False):
+    &#34;&#34;&#34;
+    Select or get the models stored in the container.
+
+    Filter fields are nothing but the list of lambda functions or it can be `None` to
+    get all models from the container.
+
+    You can also get the values as `dict` object, by setting `return_as_dict` value to `True`
+
+    ```
+    from pexicdb import connect
+    from pexicdb.fields import UUIDField, StringField, IntegerField
+
+    user = {
+        &#34;id&#34;: UUIDField(&#34;id&#34;),
+        &#34;name&#34;: StringField(&#34;name&#34;),
+        &#34;age&#34;: IntegerField(&#34;age&#34;)
+    }
+
+    users = connect(&#34;users&#34;, list(user.values()))
+
+    # get all stored models
+    for c_user in users.get():
+        print(c_user)
+
+    # get models has age more than 20
+    for c_user in users.get([user[&#34;age&#34;].greater_than(20)]):
+        print(c_user)
+
+    # get only 2 models and in dictionary object
+    for c_user in users.get(limit=2, return_as_dict=True):
+        print(c_user)
+    ```
+
+    Arguments:
+        `filter_fields`: list of lambda functions to filter or None to get all
+
+        `limit`: number of models to be returned, `-1` for no limit
+
+        `return_as_dict`: returns in dict object when set to `True`
+    &#34;&#34;&#34;
+    returned_models = 0     # number of returned models
+    containers = get_all_containers(self._name)     # all containers name
+
+    # iterating containers
+    for container in containers:
+        # open the container is bytes read mode
+        container_fp = open(container, &#34;rb&#34;)    # container file pointer
+
+        # run the loop
+        # when the line data is nothing then break
+        while True:
+            line = container_fp.readline()  # read line from the container
+            if not line:
+                # if line is empty or not then break the loop
+                break
+            
+            # converting the base64 to model
+            model = decode(line)
+            
+            # total booleans returned by the lambda functions
+            booleans = []
+            
+            if filter_fields is None:
+                # if filter_fields value is None
+                # then to evaluate then to return the model
+                # append the True to booleans list
+                booleans.append(True)
+            else:
+                # iterating lambda functions
+                for lambda_fun in filter_fields:
+                    # iterating model field
+                    for field in model:
+                        booleans.append(lambda_fun(field))  # comparing and adding return value to the booleans
+
+            # checking for booleans
+            # if first booleans list value is True
+            # then all function will be used to get if all values in the list are True or not
+            if booleans[0] is True and all(booleans) is True:
+                returned_models += 1    # incrementing the returned model
+
+                if return_as_dict is True:
+                    # if the return as dict object is True
+                    kv = {} # empty dictionary object
+                    # itertating fields
+                    for field in model:
+                        # settings key value as the field name and the value is
+                        # the field
+                        kv[field.name] = field
+                    yield kv
+                else:
+                    yield model
+
+            # checking the limit if set
+            if limit &gt; 0 and returned_models &gt;= limit:
+                # if returned models are equal or more than it
+                # then break
+                break
+        
+        # checking the limit if set
+        if limit &gt; 0 and returned_models &gt;= limit:
+            # if returned models are equal or more than it
+            # then break
+            break</code></pre>
+</details>
+</dd>
+<dt id="pexicdb.core.PexicdbCursor.insert"><code class="name flex">
+<span>def <span class="ident">insert</span></span>(<span>self, data: Union[list[<a title="pexicdb.fields.BaseField" href="fields.html#pexicdb.fields.BaseField">BaseField</a>], dict[str, Any]]) ‑> Union[<a title="pexicdb.fields.UUIDField" href="fields.html#pexicdb.fields.UUIDField">UUIDField</a>, <a title="pexicdb.fields.IntegerField" href="fields.html#pexicdb.fields.IntegerField">IntegerField</a>]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Insert the model, at the time of insert you can also pass the <code>dict</code> object that
+contains the field name as the key in it and the corresponding value to it.</p>
+<p>To insert more than one model use iteration.</p>
+<pre><code>from pexicdb import connect
+from pexicdb.fields import UUIDField, StringField, IntegerField
+
+user = {
+    &quot;id&quot;: UUIDField(&quot;id&quot;),
+    &quot;name&quot;: StringField(&quot;name&quot;),
+    &quot;age&quot;: IntegerField(&quot;age&quot;)
+}
+
+users = connect(&quot;users&quot;, list(user.values()))
+
+users.insert({
+    &quot;name&quot;: &quot;Harkishan Khuva&quot;,
+    &quot;age&quot;: 19
+})
+# or it can be done as follows
+model = user.copy()
+model[&quot;name&quot;].data = &quot;Harkishan Khuva&quot;
+model[&quot;age&quot;].data = 19
+users.insert(list(model.values()))
+</code></pre>
+<h2 id="arguments">Arguments</h2>
+<p><code>data</code>: data to be inserted</p>
+<h2 id="returns">Returns</h2>
+<p>First field of the model</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert(self, data: typing.Union[list[BaseField], dict[str, typing.Any]]) -&gt; typing.Union[UUIDField, IntegerField]:
+    &#34;&#34;&#34;
+    Insert the model, at the time of insert you can also pass the `dict` object that
+    contains the field name as the key in it and the corresponding value to it.
+
+    To insert more than one model use iteration.
+
+    ```
+    from pexicdb import connect
+    from pexicdb.fields import UUIDField, StringField, IntegerField
+
+    user = {
+        &#34;id&#34;: UUIDField(&#34;id&#34;),
+        &#34;name&#34;: StringField(&#34;name&#34;),
+        &#34;age&#34;: IntegerField(&#34;age&#34;)
+    }
+
+    users = connect(&#34;users&#34;, list(user.values()))
+
+    users.insert({
+        &#34;name&#34;: &#34;Harkishan Khuva&#34;,
+        &#34;age&#34;: 19
+    })
+    # or it can be done as follows
+    model = user.copy()
+    model[&#34;name&#34;].data = &#34;Harkishan Khuva&#34;
+    model[&#34;age&#34;].data = 19
+    users.insert(list(model.values()))
+    ```
+
+    Arguments:
+        `data`: data to be inserted
+    
+    Returns:
+        First field of the model
+    &#34;&#34;&#34;
+    # checking for data is instance of list or dict
+    if isinstance(data, list) is True:
+        # is list it&#39;s ok, check the field type and copy it
+        for field in data:
+            if isinstance(field, BaseField) is not True:
+                raise TypeError(
+                    &#34;model field to be inserted must be instance of %s&#34;%(BaseField.__name__,)
+                )
+        model = data.copy()
+
+    elif isinstance(data, dict) is True:
+        # is dict
+        # now add values to model fields using the keys.
+        # keys and name of the fields are matched and value is set.
+        model = self._model.copy()
+        for k,v in data.items(): # type:ignore
+            for field in model:
+                if field.name == k:
+                    field.data = v
+    else:
+        # its error time.
+        raise TypeError(
+            &#34;Insert value argument must be instance of %s or %s, got %s&#34;%(list.__name__, dict.__name__, type(data).__name__)
+        )
+
+    # checking model
+    if len(model) != len(self._model):
+        raise ValueError(
+            &#34;model length is not equal to the class model length&#34;
+        )
+    
+    # comparing the model and fields&#39; types
+    for index, field in enumerate(model):
+        if isinstance(field, type(self._model[index])) is not True:
+            raise TypeError(
+                &#34;model to insert in the container contains invalid field &#39;%s&#39;, it must be &#39;%s&#39;&#34;%(type(field).__name__, type(self._model[index]).__name__)
+            )
+
+    with self._lock:
+        # iterating fields of the model
+        for field in model:
+            # assigning default value if exists
+            field.auto_assign() # type: ignore
+            # validating the field(e.g. checking data type and etc)
+            field.validate() # type: ignore
+        
+        # going at the end of the file
+        self._container_fp.seek(0,2)
+        # writing the model in base64 format using encode function.
+        self._container_fp.write(encode(model))
+        
+        # truncate the file
+        self._container_fp.truncate()
+
+        # checking the size of the current container
+        if (os.stat(self._container_fp.name).st_size/1024/1024) &gt;= self.max_size:
+            # if container is greater than or equal to the maximum size set
+            # then close the container file pointer
+            self._container_fp.close()
+            # create new container and set to the class member
+            self._container_fp = open(create_container(self._name), self._container_fp.mode)
+        
+        # calling trigger function if exists
+        self.exec_trigger(&#34;ON_INSERT&#34;, {
+            &#34;model&#34;: model,
+            &#34;cursor&#34;: self
+        })            
+
+        # return the first field of the model
+        return model[0] # type: ignore</code></pre>
+</details>
+</dd>
+<dt id="pexicdb.core.PexicdbCursor.remove"><code class="name flex">
+<span>def <span class="ident">remove</span></span>(<span>self, filter_fields: Optional[list], limit: int = -1) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove the model from the container using lambda functions or None to remove all.</p>
+<p>You can also pass the number of models to be removed, using <code>limit</code> argument.</p>
+<pre><code>from pexicdb import connect
+from pexicdb.fields import UUIDField, StringField, IntegerField
+
+user = {
+    &quot;id&quot;: UUIDField(&quot;id&quot;),
+    &quot;name&quot;: StringField(&quot;name&quot;),
+    &quot;age&quot;: IntegerField(&quot;age&quot;)
+}
+
+users = connect(&quot;users&quot;, list(user.values()))
+
+users.remove(None) # remove all models
+
+# remove specific model where the name value is `Harkishan Khuva`
+# and limit is set to 1
+users.remove([
+    user[&quot;name&quot;] == &quot;Harkishan Khuva&quot;
+], limit=1)
+</code></pre>
+<h2 id="arguments">Arguments</h2>
+<p><code>filter_fields</code>: lambda functions or None for all</p>
+<p><code>limit</code>: limit of number of records to remove</p>
+<h2 id="returns">Returns</h2>
+<p>List containing removed models</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove(self, filter_fields:typing.Union[list, None], limit:int = -1) -&gt; list:
+    &#34;&#34;&#34;
+    Remove the model from the container using lambda functions or None to remove all.
+
+    You can also pass the number of models to be removed, using `limit` argument.
+
+    ```
+    from pexicdb import connect
+    from pexicdb.fields import UUIDField, StringField, IntegerField
+
+    user = {
+        &#34;id&#34;: UUIDField(&#34;id&#34;),
+        &#34;name&#34;: StringField(&#34;name&#34;),
+        &#34;age&#34;: IntegerField(&#34;age&#34;)
+    }
+
+    users = connect(&#34;users&#34;, list(user.values()))
+
+    users.remove(None) # remove all models
+
+    # remove specific model where the name value is `Harkishan Khuva`
+    # and limit is set to 1
+    users.remove([
+        user[&#34;name&#34;] == &#34;Harkishan Khuva&#34;
+    ], limit=1)
+    ```
+
+    Arguments:
+        `filter_fields`: lambda functions or None for all
+
+        `limit`: limit of number of records to remove
+    
+    Returns:
+        List containing removed models
+    &#34;&#34;&#34;
+    removed_models = [] # models that are removed
+
+    with self._lock:
+        containers = get_all_containers(self._name) # all containers
+
+        # iterating containers
+        for container in containers:
+            container_fp = open(container, &#34;rb+&#34;)   # container file&#39;s file pointer
+            container_fp.seek(0)
+
+            to_remove_models_index = [] # index of model to be removed from the container
+            index = 0   # index for getting index of the line in the container
+            while True:
+                line = container_fp.readline()
+                if not line:
+                    break
+                model = decode(line)    # original model
+
+                booleans = []
+                if filter_fields is None:
+                    # None mean do all
+                    # append the True value will make it to do
+                    booleans.append(True)
+                else:
+                    # iterating lambda functions
+                    for lambda_fun in filter_fields:
+                        for field in model:
+                            booleans.append(lambda_fun(field))
+
+                # if booleans have only True values
+                if booleans[0] is True and all(booleans) is True:
+                    to_remove_models_index.append(index)    # adding index to remove
+                    removed_models.append(model)    # adding model that will be removed
+
+                    # if the limit is set and removed models length is greater than or equal to
+                    # then break the loop
+                    if limit &gt; 0 and len(removed_models) &gt;= limit:
+                        break
+                index += 1  # increment the index value
+            
+            if len(to_remove_models_index) &gt; 0: # if the length of to_remove_models_index object is more than 0
+                container_fp.seek(0)    # change the position to the starting
+                lines = container_fp.readlines()    # reading all lines
+
+                # iterating index in the to_remove_models_index in reverse to
+                # avoid the index error
+                for index in reversed(to_remove_models_index):
+                    lines.pop(index)    # removing the line(encoded model) using index
+                
+                container_fp.seek(0)    # set the position to the start
+                container_fp.writelines(lines)  # writing modified lines
+                container_fp.truncate() # truncate the file
+
+            # closing the container
+            container_fp.close()
+            
+            # execute trigger
+            self.exec_trigger(&#34;ON_REMOVE&#34;, {
+                &#34;removed_models&#34;: removed_models,
+                &#34;cursor&#34;: self
+            })
+            
+            # if the limit is set and removed models length is greater than or equal to
+            # then break the loop
+            if limit &gt; 0 and len(removed_models) &gt;= limit:
+                break
+
+    return removed_models</code></pre>
+</details>
+</dd>
+<dt id="pexicdb.core.PexicdbCursor.update"><code class="name flex">
+<span>def <span class="ident">update</span></span>(<span>self, filter_fields: Optional[list], data_to_update: dict) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update the field data of stored model in the container using the <code>filter_fields</code></p>
+<p>You need pass the dictionary(<code>dict</code>) object to that contains data to replace with
+using field name as the key.</p>
+<pre><code>from pexicdb import connect
+from pexicdb.fields import UUIDField, StringField, IntegerField
+
+user = {
+    &quot;id&quot;: UUIDField(&quot;id&quot;),
+    &quot;name&quot;: StringField(&quot;name&quot;),
+    &quot;age&quot;: IntegerField(&quot;age&quot;)
+}
+
+users = connect(&quot;users&quot;, list(user.values()))
+
+# update the models where name is `Harkishan Khuva` and update it to the `Haki`
+users.update(
+    [
+        user[&quot;name&quot;] == &quot;Harkishan Khuva&quot;
+    ],
+    {
+        &quot;name&quot;: &quot;Haki&quot;
+    }
+)
+</code></pre>
+<h2 id="arguments">Arguments</h2>
+<p><code>filter_fields</code>: lambda functions or None to filter out models
+<code>data_to_update</code>: data to replace in the model</p>
+<h2 id="returns">Returns</h2>
+<p>returns the list of first field of model</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update(self, filter_fields:typing.Union[list, None], data_to_update:dict) -&gt; list:
+    &#34;&#34;&#34;
+    Update the field data of stored model in the container using the `filter_fields`
+
+    You need pass the dictionary(`dict`) object to that contains data to replace with
+    using field name as the key.
+
+    ```
+    from pexicdb import connect
+    from pexicdb.fields import UUIDField, StringField, IntegerField
+
+    user = {
+        &#34;id&#34;: UUIDField(&#34;id&#34;),
+        &#34;name&#34;: StringField(&#34;name&#34;),
+        &#34;age&#34;: IntegerField(&#34;age&#34;)
+    }
+
+    users = connect(&#34;users&#34;, list(user.values()))
+
+    # update the models where name is `Harkishan Khuva` and update it to the `Haki`
+    users.update(
+        [
+            user[&#34;name&#34;] == &#34;Harkishan Khuva&#34;
+        ],
+        {
+            &#34;name&#34;: &#34;Haki&#34;
+        }
+    )
+    ```
+
+    Arguments:
+        `filter_fields`: lambda functions or None to filter out models
+        `data_to_update`: data to replace in the model
+    
+    Returns:
+        returns the list of first field of model
+    &#34;&#34;&#34;
+    updated_keys = []   # updated models&#39; key will be stored in this object
+    containers = get_all_containers(self._name)     # getting all containers
+
+    # iterating containers
+    for container in containers:
+        models_to_update = {}   # models to be updated from container will be stored in this object
+        container_fp = open(container, &#34;rb+&#34;)   # container file&#39;s file pointer
+
+        index = 0   # using index and at last models are replaced with new models using index in the container
+        while True:
+            line = container_fp.readline()
+            if not line:
+                break
+            # getting model from the line
+            model = decode(line)
+
+            booleans = []   # booleans will be stored from lambda functions
+            if filter_fields is None:
+                # None mean do all
+                # append the True value will make it to do
+                booleans.append(True)
+            else:
+                # iterating lambda function and appending it to booleans
+                for lambda_fun in filter_fields:
+                    for field in model:
+                        booleans.append(lambda_fun(field))
+
+            # if booleans&#39; elements are True or only True value present in the booleans
+            if booleans[0] is True and all(booleans) is True:
+                # updating model
+                # using key value of data_to_update argument
+                for k,v in data_to_update.items():
+                    for field in model:
+                        if field.name == k: # checking field name and update the value
+                            field.data = v
+                models_to_update[index] = model # adding model to models_to_update with index number(line_number-1)
+            index += 1  # incrment index
+
+        # if models are available in models_to_update object
+        if len(models_to_update.keys()) &gt; 0:
+            container_fp.seek(0) # file pointer to starting position
+            lines = container_fp.readlines()    # reading all lines of container
+            
+            # iterating updated models
+            for index, model in models_to_update.items():
+                lines[index] = encode(model)    # updating model using index of it&#39;s in container
+                updated_keys.append(model[0].data)  # append the first field value to the updated_keys
+            
+            container_fp.seek(0)    # again file pointer at start position
+            container_fp.writelines(lines)  # write modified lines
+            container_fp.truncate() # truncate the file
+
+        # close the container file pointer
+        container_fp.close()
+
+        # execute the trigger
+        self.exec_trigger(&#34;ON_UPDATE&#34;, {
+            &#34;updated_models&#34;: list(models_to_update.values()),
+            &#34;cursor&#34;: self
+        })
+
+    return updated_keys</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="pexicdb" href="index.html">pexicdb</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="pexicdb.core.PexicdbCursor" href="#pexicdb.core.PexicdbCursor">PexicdbCursor</a></code></h4>
+<ul class="two-column">
+<li><code><a title="pexicdb.core.PexicdbCursor.count" href="#pexicdb.core.PexicdbCursor.count">count</a></code></li>
+<li><code><a title="pexicdb.core.PexicdbCursor.exec_trigger" href="#pexicdb.core.PexicdbCursor.exec_trigger">exec_trigger</a></code></li>
+<li><code><a title="pexicdb.core.PexicdbCursor.get" href="#pexicdb.core.PexicdbCursor.get">get</a></code></li>
+<li><code><a title="pexicdb.core.PexicdbCursor.insert" href="#pexicdb.core.PexicdbCursor.insert">insert</a></code></li>
+<li><code><a title="pexicdb.core.PexicdbCursor.max_size" href="#pexicdb.core.PexicdbCursor.max_size">max_size</a></code></li>
+<li><code><a title="pexicdb.core.PexicdbCursor.remove" href="#pexicdb.core.PexicdbCursor.remove">remove</a></code></li>
+<li><code><a title="pexicdb.core.PexicdbCursor.triggers" href="#pexicdb.core.PexicdbCursor.triggers">triggers</a></code></li>
+<li><code><a title="pexicdb.core.PexicdbCursor.update" href="#pexicdb.core.PexicdbCursor.update">update</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
